@@ -20,6 +20,7 @@ function parse(file)
 	var jsonObject = JSON.parse(file);
 	var tempDataPoint = new DataPoint();
 	var dataDump = new DataDump();
+	var index = 0;
 	for (var list in jsonObject)
 	{
 		for (var i = 0; i < jsonObject.list.length; i++)
@@ -43,7 +44,8 @@ function parse(file)
 			tempDataPoint.lastCommunicationTime = jsonObject.list[i].lastCommunicationTime;
 			tempDataPoint.landMark 				= jsonObject.list[i].landMark;
 			
-			dataDump[i] = tempDataPoint;
+			dataDump[index] = tempDataPoint;
+			index++;
 		}
 	}
 }
