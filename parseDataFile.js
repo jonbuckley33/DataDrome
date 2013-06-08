@@ -16,12 +16,11 @@ function populateDump(evt) {
 	//takes the JSON string and converts it to object form.
 	var jsonObject = JSON.parse(textOfFile);
 
-
-	var tempDataPoint = new DataPoint();
-	var dataDump = new DataDump();
-	var index = 0;
-
+	var dataDump = new Array();
+	
 	for (var i = 0; i < jsonObject.stationBeanList.length; i++) {
+		var tempDataPoint = new DataPoint();
+		
 		tempDataPoint.id = jsonObject.stationBeanList[i].id;
 		tempDataPoint.stationName = jsonObject.stationBeanList[i].stationName;
 		tempDataPoint.availableDocks = jsonObject.stationBeanList[i].availableDocks;
